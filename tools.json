@@ -1,0 +1,69 @@
+[
+  {
+    "name": "find_units",
+    "description": "Find geologic rock units from Macrostrat by location + age, by stratigraphic name, or by lithology. Provide lat+lng (optionally with age in millions of years, Ma), or a strat_name (e.g. \"Hell Creek\"), or a lith (e.g. \"granite\"). Returns units with formation/group, stratigraphic column, bottom/top ages (Ma) and time intervals, lithology, and max thickness. Keyless. North America and beyond.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number",
+          "description": "Latitude (decimal degrees). Must be paired with lng."
+        },
+        "lng": {
+          "type": "number",
+          "description": "Longitude (decimal degrees). Must be paired with lat."
+        },
+        "age": {
+          "type": "number",
+          "description": "Geologic age in millions of years (Ma). Optional; used with lat+lng."
+        },
+        "strat_name": {
+          "type": "string",
+          "description": "Stratigraphic name to match, e.g. \"Hell Creek\"."
+        },
+        "lith": {
+          "type": "string",
+          "description": "Lithology to match, e.g. \"granite\", \"sandstone\"."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Max units to return (default 20)."
+        }
+      }
+    }
+  },
+  {
+    "name": "find_columns",
+    "description": "List Macrostrat stratigraphic columns near a geographic point. Provide lat and lng (decimal degrees). Returns the columns covering that location with column name, regional group, coordinates, unit count, and area. Keyless.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number",
+          "description": "Latitude (decimal degrees)."
+        },
+        "lng": {
+          "type": "number",
+          "description": "Longitude (decimal degrees)."
+        }
+      },
+      "required": [
+        "lat",
+        "lng"
+      ]
+    }
+  },
+  {
+    "name": "define_lithology",
+    "description": "Look up Macrostrat lithology definitions by name (e.g. \"granite\", \"limestone\") returning lith_id, name, type, group, and class; omit lith to list all lithologies (capped at 50 results).Returns lithology id, name, type, group, and class. Keyless.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "lith": {
+          "type": "string",
+          "description": "Lithology name to match, e.g. \"granite\". Omit to list all."
+        }
+      }
+    }
+  }
+]
