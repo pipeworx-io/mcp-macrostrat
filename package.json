@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-macrostrat",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Macrostrat MCP — geologic map / column / unit data for North America and beyond.",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "macrostrat",
     "gatewaySlug": "macrostrat",
-    "sourceHash": "v1-65be37bf78f8f8b9270430ebd45e5c87c11dabca0799747c3bc572b9ce404675",
-    "sourceCommit": "5c89d6abb778d45da5d92002eb251978622bedf9"
+    "sourceHash": "v1-3e70d826ce88d5d38a5290a357c1a7e9d67bd65bcc711adbafe025addf0a3b5c",
+    "sourceCommit": "236b0a46d91f343fe094da9f499c378e88f78312"
   }
 }
